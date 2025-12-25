@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="exo_humanoid">
+
+  <link
+    name="trunk">
+    <inertial>
+      <origin
+        xyz="-0.045535 0.00015534 -0.018956"
+        rpy="0 0 0" />
+      <mass
+        value="5.1535" />
+      <inertia
+        ixx="0.051327"
+        ixy="-4.1E-05"
+        ixz="0.003873"
+        iyy="0.02473"
+        iyz="2.1E-05"
+        izz="0.053347" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/trunk.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.68627 0.65882 0.63922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/trunk.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <!-- ************************************************************ -->
+  <!-- ************************ Left Leg ************************** -->
+  <!-- ************************************************************ -->
+
+  <!-- ************* part 1 *************** -->  
+  <link
+    name="L_hip">
+    <inertial>
+      <origin
+        xyz="0.13584 0.096254 0.0050847"
+        rpy="0 0 0" />
+      <mass
+        value="1.0798" />
+      <inertia
+        ixx="0.012708"
+        ixy="0.016444"
+        ixz="0.00095"
+        iyy="0.024318"
+        iyz="0.000712"
+        izz="0.035953" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/L_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/L_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0155 0.145 0.010652"
+      rpy="0 0 0" />
+    <parent
+      link="trunk" />
+    <child
+      link="L_hip" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.3"
+      upper="0.15"
+      effort="200"
+      velocity="1" />
+  </joint>
+
+<!-- ************* part 2 *************** -->  
+  <link
+    name="L_hip2">
+    <inertial>
+      <origin
+        xyz="8.1754E-05 0.023911 -0.33627"
+        rpy="0 0 0" />
+      <mass
+        value="1.3057" />
+      <inertia
+        ixx="0.18782"
+        ixy="3E-06"
+        ixz="-3.1E-05"
+        iyy="0.186504"
+        iyz="-0.01407"
+        izz="0.002077" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/L_hip2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/L_hip2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_hip2_joint"
+    type="revolute">
+    <origin
+      xyz="0.164 0.071 0"
+      rpy="0 0 0" />
+    <parent
+      link="L_hip" />
+    <child
+      link="L_hip2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.75"
+      upper="0.75"
+      effort="200"
+      velocity="1" />
+  </joint>
+ 
+  <!-- ************* part 3 *************** -->  
+  <link
+    name="L_calf">
+    <inertial>
+      <origin
+        xyz="-1.7238E-05 0.029552 -0.29435"
+        rpy="0 0 0" />
+      <mass
+        value="1.4861" />
+      <inertia
+        ixx="0.155166"
+        ixy="-7E-06"
+        ixz="2.1E-05"
+        iyy="0.153172"
+        iyz="-0.015978"
+        izz="0.003014" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/L_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/L_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_calf_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.472"
+      rpy="0 0 0" />
+    <parent
+      link="L_hip2" />
+    <child
+      link="L_calf" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.5"
+      upper="1.5"
+      effort="200"
+      velocity="1" />
+  </joint>
+  
+  <!-- ************* part 4 *************** --> 
+  <link
+    name="L_toe">
+    <inertial>
+      <origin
+        xyz="0.026161 -0.060661 -0.087888"
+        rpy="0 0 0" />
+      <mass
+        value="0.97241" />
+      <inertia
+        ixx="0.013637"
+        ixy="-0.002384"
+        ixz="-0.00302"
+        iyy="0.015117"
+        iyz="0.006018"
+        izz="0.011377" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/L_toe.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/L_toe.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_toe_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.373"
+      rpy="0 0 0" />
+    <parent
+      link="L_calf" />
+    <child
+      link="L_toe" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.0"
+      upper="1.0"
+      effort="200"
+      velocity="1" />
+  </joint>
+  
+  <!-- ************* part 5 *************** -->   
+  <link name="L_foot">
+    <inertial>
+      <mass value="0.01" />
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+       <sphere radius="0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+       <sphere radius="0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_foot_fixed" type="fixed">
+    <origin xyz="0.0 -0.074545 -0.115" rpy="0 0 0" />
+    <parent link="L_toe" />
+    <child link="L_foot" />
+  </joint>
+
+  
+  <!-- ************************************************************ -->
+  <!-- ************************ Right Leg ************************** -->
+  <!-- ************************************************************ -->
+
+  <!-- ************* part 1 *************** --> 
+  <link
+    name="R_hip">
+    <inertial>
+      <origin
+        xyz="0.13129 -0.091188 -3.1477E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.95367" />
+      <inertia
+        ixx="0.010039"
+        ixy="-0.013568"
+        ixz="-5E-06"
+        iyy="0.020326"
+        iyz="5E-06"
+        izz="0.029849" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/R_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/R_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0155 -0.145 0.010652"
+      rpy="0 0 0" />
+    <parent
+      link="trunk" />
+    <child
+      link="R_hip" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.15"
+      upper="0.3"
+      effort="200"
+      velocity="1" />
+  </joint>
+  
+  <!-- ************* part 2 *************** -->   
+  <link
+    name="R_hip2">
+    <inertial>
+      <origin
+        xyz="3.8306E-05 -0.023897 -0.33631"
+        rpy="0 0 0" />
+      <mass
+        value="1.3064" />
+      <inertia
+        ixx="0.187873"
+        ixy="2E-06"
+        ixz="-3E-06"
+        iyy="0.186557"
+        iyz="0.014068"
+        izz="0.002078" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/R_hip2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/R_hip2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_hip2_joint"
+    type="revolute">
+    <origin
+      xyz="0.164 -0.071 0"
+      rpy="0 0 0" />
+    <parent
+      link="R_hip" />
+    <child
+      link="R_hip2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.75"
+      upper="0.75"
+      effort="200"
+      velocity="1" />
+  </joint>
+  
+  <!-- ************* part 3 *************** -->    
+  <link
+    name="R_calf">
+    <inertial>
+      <origin
+        xyz="8.8182E-05 -0.029552 -0.29447"
+        rpy="0 0 0" />
+      <mass
+        value="1.4861" />
+      <inertia
+        ixx="0.155277"
+        ixy="-7E-06"
+        ixz="-3.8E-05"
+        iyy="0.153284"
+        iyz="0.015978"
+        izz="0.003014" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/R_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/R_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_calf_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.472"
+      rpy="0 0 0" />
+    <parent
+      link="R_hip2" />
+    <child
+      link="R_calf" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.5"
+      upper="0.5"
+      effort="200"
+      velocity="1" />
+  </joint>
+  
+  <!-- ************* part 4 *************** -->     
+  <link
+    name="R_toe">
+    <inertial>
+      <origin
+        xyz="0.030306 0.060458 -0.088755"
+        rpy="0 0 0" />
+      <mass
+        value="0.9462" />
+      <inertia
+        ixx="0.013418"
+        ixy="0.002604"
+        ixz="-0.003204"
+        iyy="0.014624"
+        iyz="-0.005917"
+        izz="0.010847" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/R_toe.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exo_humanoid/meshes/R_toe.STL" />
+      </geometry>
+    </collision> 
+  </link>
+  <joint
+    name="R_toe_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.373"
+      rpy="0 0 0" />
+    <parent
+      link="R_calf" />
+    <child
+      link="R_toe" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.0"
+      upper="1.0"
+      effort="200"
+      velocity="1" />
+  </joint>
+  
+  <!-- ************* part 5 *************** -->    
+  <link name="R_foot">
+    <inertial>
+      <mass value="0.01" />
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+       <sphere radius="0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+       <sphere radius="0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_foot_fixed" type="fixed">
+    <origin xyz="0.0 0.074545 -0.115" rpy="0 0 0" />
+    <parent link="R_toe" />
+    <child link="R_foot" />
+  </joint>  
+
+</robot>
